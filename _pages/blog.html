@@ -1,0 +1,19 @@
+---
+layout: archive
+permalink: /blog/
+title: "Blog"
+author_profile: true
+redirect_from:
+  - /year-archive/
+  - /wordpress/blog-posts/
+---
+
+{% include base_path %}
+
+{% if site.posts.size > 0 %}
+  {% for post in site.posts %}
+    {% include editorial-preview.html %}
+  {% endfor %}
+{% else %}
+  <p class="archive-empty">Ainda não há posts publicados. Em breve.</p>
+{% endif %}

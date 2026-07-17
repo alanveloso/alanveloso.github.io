@@ -1,0 +1,19 @@
+---
+layout: archive
+title: "Projetos"
+permalink: /projects/
+author_profile: true
+redirect_from:
+  - /portfolio/
+---
+
+{% include base_path %}
+
+{% assign project_items = site.projects | default: empty %}
+{% if project_items.size > 0 %}
+  {% for post in project_items %}
+    {% include editorial-preview.html %}
+  {% endfor %}
+{% else %}
+  <p class="archive-empty">Ainda não há projetos publicados. Em breve.</p>
+{% endif %}

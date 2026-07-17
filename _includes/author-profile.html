@@ -1,0 +1,168 @@
+{% include base_path %}
+
+{% if page.author and site.data.authors[page.author] %}
+  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
+{% endif %}
+
+<div itemscope itemtype="http://schema.org/Person" class="author-profile">
+
+  {% unless include.compact %}
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
+    {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
+    {% if author.bio %}<p class="author__bio" itemprop="description">{{ author.bio }}</p>{% endif %}
+  </div>
+  {% endunless %}
+
+  <div class="author__urls-wrapper">
+    <h4 class="author__urls-title">Contatos</h4>
+    <ul class="author__urls">
+      {% unless include.compact %}
+      {% if author.location %}
+        <li class="author__desktop">{{ author.location }}</li>
+      {% endif %}
+      {% if author.employer %}
+        <li class="author__desktop">{{ author.employer }}</li>
+      {% endif %}
+      {% endunless %}
+      {% if author.uri %}
+        <li><a href="{{ author.uri }}">{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
+      {% endif %}
+      {% if author.email %}
+        <li><a href="mailto:{{ author.email }}">{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
+      {% endif %}
+
+      {% if author.academia %}
+        <li><a href="{{ author.academia }}">Academia</a></li>
+      {% endif %}
+      {% if author.arxiv %}
+        <li><a href="{{ author.arxiv }}">arXiv</a></li>
+      {% endif %}
+      {% if author.googlescholar %}
+        <li><a href="{{ author.googlescholar }}">Google Scholar</a></li>
+      {% endif %}
+      {% if author.inspire-hep %}
+        <li><a href="{{ author.inspire-hep }}">INSPIRE-HEP</a></li>
+      {% endif %}
+      {% if author.impactstory %}
+        <li><a href="{{ author.impactstory }}">Impactstory</a></li>
+      {% endif %}
+      {% if author.orcid %}
+        <li><a href="{{ author.orcid }}">ORCID</a></li>
+      {% endif %}
+      {% if author.pubmed %}
+        <li><a href="{{ author.pubmed }}">PubMed</a></li>
+      {% endif %}
+      {% if author.researchgate %}
+        <li><a href="{{ author.researchgate }}">ResearchGate</a></li>
+      {% endif %}
+      {% if author.scopus %}
+        <li><a href="{{ author.scopus }}">Scopus</a></li>
+      {% endif %}
+      {% if author.semantic %}
+        <li><a href="{{ author.semantic }}">Semantic Scholar</a></li>
+      {% endif %}
+      {% if author.ssrn %}
+        <li><a href="{{ author.ssrn }}">SSRN</a></li>
+      {% endif %}
+      {% if author.zotero %}
+        <li><a href="{{ author.zotero }}">Zotero</a></li>
+      {% endif %}
+
+      {% if author.bitbucket %}
+        <li><a href="https://bitbucket.org/{{ author.bitbucket }}">Bitbucket</a></li>
+      {% endif %}
+      {% if author.codepen %}
+        <li><a href="https://codepen.io/{{ author.codepen }}">CodePen</a></li>
+      {% endif %}
+      {% if author.dribbble %}
+        <li><a href="https://dribbble.com/{{ author.dribbble }}">Dribbble</a></li>
+      {% endif %}
+      {% if author.github %}
+        <li><a href="https://github.com/{{ author.github }}">GitHub</a></li>
+      {% endif %}
+      {% if author.kaggle %}
+        <li><a href="https://kaggle.com/{{ author.kaggle }}">Kaggle</a></li>
+      {% endif %}
+      {% if author.stackoverflow %}
+        <li><a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}">Stackoverflow</a></li>
+      {% endif %}
+
+      {% if author.artstation %}
+        <li><a href="https://www.artstation.com/{{ author.artstation }}">Artstation</a></li>
+      {% endif %}
+      {% if author.bluesky %}
+        <li><a href="https://bsky.app/profile/{{ author.bluesky }}">Bluesky</a></li>
+      {% endif %}
+      {% if author.facebook %}
+        <li><a href="https://www.facebook.com/{{ author.facebook }}">Facebook</a></li>
+      {% endif %}
+      {% if author.flickr %}
+        <li><a href="https://www.flickr.com/{{ author.flickr }}">Flickr</a></li>
+      {% endif %}
+      {% if author.foursquare %}
+        <li><a href="https://foursquare.com/{{ author.foursquare }}">Foursquare</a></li>
+      {% endif %}
+      {% if author.goodreads %}
+        <li><a href="https://www.goodreads.com/{{ author.goodreads }}">Goodreads</a></li>
+      {% endif %}
+      {% if author.google_plus %}
+        <li><a href="https://plus.google.com/+{{ author.google_plus }}">Google+</a></li>
+      {% endif %}
+      {% if author.keybase %}
+        <li><a href="https://keybase.io/{{ author.keybase }}">Keybase</a></li>
+      {% endif %}
+      {% if author.instagram %}
+        <li><a href="https://instagram.com/{{ author.instagram }}">Instagram</a></li>
+      {% endif %}
+      {% if author.lastfm %}
+        <li><a href="https://last.fm/user/{{ author.lastfm }}">Last.fm</a></li>
+      {% endif %}
+      {% if author.linkedin %}
+        <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}">LinkedIn</a></li>
+      {% endif %}
+      {% if author.mastodon %}
+        <li><a href="{{ author.mastodon }}">Mastodon</a></li>
+      {% endif %}
+      {% if author.medium %}
+        <li><a href="{{ author.medium }}">Medium</a></li>
+      {% endif %}
+      {% if author.pinterest %}
+        <li><a href="https://www.pinterest.com/{{ author.pinterest }}">Pinterest</a></li>
+      {% endif %}
+      {% if author.soundcloud %}
+        <li><a href="https://soundcloud.com/{{ author.soundcloud }}">Soundcloud</a></li>
+      {% endif %}
+      {% if author.steam %}
+        <li><a href="https://steamcommunity.com/id/{{ author.steam }}">Steam</a></li>
+      {% endif %}
+      {% if author.telegram %}
+        <li><a href="{{ author.telegram }}">Telegram</a></li>
+      {% endif %}
+      {% if author.tumblr %}
+        <li><a href="https://{{ author.tumblr }}.tumblr.com">Tumblr</a></li>
+      {% endif %}
+      {% if author.twitter %}
+        <li><a href="https://twitter.com/{{ author.twitter }}">X (Twitter)</a></li>
+      {% endif %}
+      {% if author.vine %}
+        <li><a href="https://vine.co/u/{{ author.vine }}">Vine</a></li>
+      {% endif %}
+      {% if author.weibo %}
+        <li><a href="https://www.weibo.com/{{ author.weibo }}">Weibo</a></li>
+      {% endif %}
+      {% if author.wikipedia %}
+        <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}">Wikipedia</a></li>
+      {% endif %}
+      {% if author.xing %}
+        <li><a href="https://www.xing.com/profile/{{ author.xing }}">XING</a></li>
+      {% endif %}
+      {% if author.youtube %}
+        <li><a href="https://www.youtube.com/@{{ author.youtube }}">YouTube</a></li>
+      {% endif %}
+      {% if author.zhihu %}
+        <li><a href="https://www.zhihu.com/people/{{ author.zhihu }}">Zhihu</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+{% include base_path %}
+
+{% assign featured_projects = site.projects | sort: "date" | reverse %}
+
+<section class="projects-sidebar" aria-labelledby="projects-sidebar-title">
+  <h2 id="projects-sidebar-title">Projetos em destaque</h2>
+
+  {% for project in featured_projects limit: 3 %}
+    <article class="projects-sidebar__item">
+      <h3>
+        <a href="{{ base_path }}{{ project.url }}">{{ project.title }}</a>
+      </h3>
+      {% if project.excerpt %}
+        <p>{{ project.excerpt | markdownify | strip_html }}</p>
+      {% endif %}
+    </article>
+  {% endfor %}
+
+  <p class="projects-sidebar__all">
+    <a href="{{ base_path }}/projects/">Ver todos os projetos</a>
+  </p>
+</section>

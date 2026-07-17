@@ -1,0 +1,29 @@
+{% include base_path %}
+
+<nav class="page__footer-nav" aria-label="Rodapé">
+  <ul class="social-icons">
+    <li><a href="{{ base_path }}/">Sobre</a></li>
+    <li><a href="{{ base_path }}/blog/">Blog</a></li>
+    <li><a href="{{ base_path }}/publications/">Publicações</a></li>
+    <li><a href="{{ base_path }}/projects/">Projetos</a></li>
+    <li><a href="{{ base_path }}/contacts/">Contatos</a></li>
+  </ul>
+</nav>
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    {% if site.author.github %}
+      <li><a href="https://github.com/{{ site.author.github }}">GitHub</a></li>
+    {% endif %}
+    {% if site.author.orcid %}
+      <li><a href="{{ site.author.orcid }}">ORCID</a></li>
+    {% endif %}
+    {% if site.atom_feed.hide != true %}
+      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}">Feed</a></li>
+    {% endif %}
+  </ul>
+</div>
+
+<div class="page__footer-copyright">
+  &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}
+</div>

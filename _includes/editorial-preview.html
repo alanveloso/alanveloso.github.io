@@ -1,0 +1,43 @@
+{% include base_path %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+{% if post.link %}
+  {% assign preview_url = post.link %}
+{% else %}
+  {% assign preview_url = base_path | append: post.url %}
+{% endif %}
+
+<article class="editorial-preview" itemscope itemtype="http://schema.org/CreativeWork">
+  <h2 class="editorial-preview__title" itemprop="headline">
+    <a href="{{ preview_url }}"{% unless post.link %} rel="permalink"{% endunless %}>{{ title }}</a>
+  </h2>
+
+  {% if post.date %}
+  <p class="editorial-preview__meta">
+    <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%d/%m/%Y" }}</time>
+  </p>
+  {% endif %}
+
+  {% if post.author %}
+  <p class="editorial-preview__byline">por {{ post.author }}</p>
+  {% elsif post.path contains '_posts/' or post.path contains '_projects/' %}
+    {% if site.author.name %}
+  <p class="editorial-preview__byline">por {{ site.author.name }}</p>
+    {% endif %}
+  {% endif %}
+
+  {% if post.excerpt %}
+  <div class="editorial-preview__excerpt" itemprop="description">
+    {{ post.excerpt | markdownify }}
+  </div>
+  {% endif %}
+
+  <p class="editorial-preview__more">
+    <a href="{{ preview_url }}"{% unless post.link %} rel="permalink"{% endunless %}>(mais…)</a>
+  </p>
+</article>

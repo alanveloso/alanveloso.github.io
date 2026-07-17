@@ -1,0 +1,51 @@
+/* ==========================================================================
+    DEFAULT THEME - LIGHT VERSION
+    Clean editorial palette inspired by readable blog layouts
+    ========================================================================== */
+/* Color codes used for the theme */
+$primary-color              : #0148ad;
+$gray                       : #4d4d4d;
+$dark-gray                  : #1a1a1a;
+$darker-gray                : #0f0f0f;
+$light-gray                 : #6b6b6b;
+$lighter-gray               : #dedede;
+
+/* Color codes used for the site */
+$danger-color               : #ee5f5b;
+$info-color                 : #0148ad;
+$notice-color               : #6b6b6b;
+$success-color              : #62c462;
+$warning-color              : #f89406;
+
+/* Other basic settings for the template */
+$border-radius              : 6px;
+$box-shadow                 : none;
+$global-transition          : color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+$masthead-height            : 0;
+$navicon-width              : 28px;
+$navicon-height             : 3px;
+$sidebar-link-max-width     : 280px;
+$sidebar-screen-min-width   : 1024px;
+
+/* Default light theme for the site */
+:root {
+    --global-base-color                 : #{$primary-color};
+    --global-bg-color                   : hsl(0, 0%, 99%);
+    --global-footer-bg-color            : transparent;
+    --global-border-color               : hsl(0, 0%, 87%);
+    --global-dark-border-color          : hsl(0, 0%, 80%);
+    --global-code-background-color      : hsl(0, 0%, 97%);
+    --global-code-text-color            : #{$dark-gray};
+    --global-fig-caption-color          : #{$light-gray};
+    --global-link-color                 : #{$primary-color};
+    --global-link-color-hover           : hsl(240, 63%, 27%);
+    --global-link-color-visited         : hsl(259, 42%, 35%);
+    --global-masthead-link-color        : #{$primary-color};
+    --global-masthead-link-color-hover  : hsl(240, 63%, 27%);
+    --global-text-color                 : #{$dark-gray};
+    --global-text-color-light           : #{$light-gray};
+    --global-thead-color                : hsl(0, 0%, 97%);
+    --clean-highlight-bg                : hsl(0, 0%, 97%);
+    --clean-max-width                   : 960px;
+    --clean-measure                     : 60ch;
+}
