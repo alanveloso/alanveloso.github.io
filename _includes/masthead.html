@@ -22,7 +22,7 @@
               {% assign is_selected = false %}
               {% if page.url contains link.url %}{% assign is_selected = true %}{% endif %}
             {% endif %}
-            <li class="masthead__menu-item{% if is_selected %} selected{% endif %}">
+            <li class="masthead__menu-item persist{% if is_selected %} selected{% endif %}">
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
