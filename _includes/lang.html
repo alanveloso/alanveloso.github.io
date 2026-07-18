@@ -1,0 +1,40 @@
+{% assign page_lang = page.lang | default: site.locale | default: "pt-BR" %}
+{% if page_lang == "en" or page_lang == "en-US" %}
+  {% assign ui_lang = "en" %}
+{% else %}
+  {% assign ui_lang = "pt-BR" %}
+{% endif %}
+{% assign ui = site.data.site-ui[ui_lang] %}
+
+{% assign translation_url = "" %}
+{% if page.translation_key %}
+  {% for p in site.pages %}
+    {% if p.translation_key == page.translation_key %}
+      {% assign candidate_lang = p.lang | default: site.locale | default: "pt-BR" %}
+      {% if ui_lang == "en" %}
+        {% unless candidate_lang == "en" or candidate_lang == "en-US" %}
+          {% assign translation_url = p.url %}
+        {% endunless %}
+      {% else %}
+        {% if candidate_lang == "en" or candidate_lang == "en-US" %}
+          {% assign translation_url = p.url %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% if translation_url == "" %}
+  {% if ui_lang == "en" %}
+    {% assign translation_url = "/" %}
+  {% else %}
+    {% assign translation_url = "/en/" %}
+  {% endif %}
+{% endif %}
+
+{% if ui_lang == "en" %}
+  {% assign nav_links = site.data.navigation.main_en %}
+  {% assign home_url = "/en/" %}
+{% else %}
+  {% assign nav_links = site.data.navigation.main %}
+  {% assign home_url = "/" %}
+{% endif %}

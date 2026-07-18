@@ -29,6 +29,7 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Default light theme for the site */
 :root {
+    color-scheme                        : light;
     --global-base-color                 : #{$primary-color};
     --global-bg-color                   : hsl(0, 0%, 99%);
     --global-footer-bg-color            : transparent;
@@ -46,6 +47,6 @@ $sidebar-screen-min-width   : 1024px;
     --global-text-color-light           : #{$light-gray};
     --global-thead-color                : hsl(0, 0%, 97%);
     --clean-highlight-bg                : hsl(0, 0%, 97%);
-    --clean-max-width                   : 960px;
+    --clean-max-width                   : 1200px;
     --clean-measure                     : 60ch;
 }

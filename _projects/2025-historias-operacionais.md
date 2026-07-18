@@ -3,6 +3,7 @@ title: "Histórias Operacionais"
 collection: projects
 date: 2025-07-20
 author: Alan Veloso
+featured: true
 excerpt: "Jogo de cartas narrativas inspirado em Black Stories (Histórias Sinistras), adaptado para revisar conceitos de Sistemas Operacionais de forma lúdica e investigativa."
 ---
 

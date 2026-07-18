@@ -9,6 +9,7 @@
 # Basic Site Settings
 locale                   : "pt-BR"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
+homepage                 : "about" # Options: "about" or "blog". Restart Jekyll after changing.
 title                    : "Alan Veloso"
 title_separator          : "-"
 name                     : &name "Alan Veloso"
@@ -27,6 +28,7 @@ author:
   name             : "Alan Veloso"
   pronouns         : # example: "she/her"  
   bio              : "Doutor em Ciência da Computação pela UFPA. Trabalho na RNP. Redes, blockchain e inteligência computacional."
+  bio_en           : "PhD in Computer Science from UFPA. I work at RNP. Networks, blockchain, and computational intelligence."
   location         : # "Belém, Pará, Brasil"
   employer         : "Rede Nacional de Ensino e Pesquisa (RNP)"
   uri              : # URL

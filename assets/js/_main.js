@@ -25,25 +25,34 @@ function determineComputedTheme() {
   return browserPref ? "dark" : "light";
 }
 
+// Update accessible labels on the theme toggle button
+function syncThemeToggleLabel(theme) {
+  const button = document.getElementById("theme-toggle");
+  if (!button) {
+    return;
+  }
+  const nextLabel = theme === "dark"
+    ? (button.dataset.labelLight || "Switch to light mode")
+    : (button.dataset.labelDark || "Switch to dark mode");
+  button.setAttribute("aria-label", nextLabel);
+  button.setAttribute("title", nextLabel);
+}
+
 // Set the theme on page load or when explicitly called
 function setTheme(theme) {
-  const use_theme = theme ||
-    localStorage.getItem("theme") ||
-    $("html").attr("data-theme") ||
-    browserPref;
+  const use_theme = theme || determineComputedTheme();
 
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
-    $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
-  } else if (use_theme === "light") {
+  } else {
     $("html").removeAttr("data-theme");
-    $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
   }
+  syncThemeToggleLabel(use_theme);
 }
 
 // Toggle the theme manually
 function toggleTheme() {
-  const current_theme = $("html").attr("data-theme");
+  const current_theme = determineComputedTheme();
   const new_theme = current_theme === "dark" ? "light" : "dark";
   localStorage.setItem("theme", new_theme);
   setTheme(new_theme);

@@ -1,12 +1,11 @@
 {% include base_path %}
+{% include lang.html %}
 
-<nav class="page__footer-nav" aria-label="Rodapé">
+<nav class="page__footer-nav" aria-label="{{ ui.footer_label }}">
   <ul class="social-icons">
-    <li><a href="{{ base_path }}/">Sobre</a></li>
-    <li><a href="{{ base_path }}/blog/">Blog</a></li>
-    <li><a href="{{ base_path }}/publications/">Publicações</a></li>
-    <li><a href="{{ base_path }}/projects/">Projetos</a></li>
-    <li><a href="{{ base_path }}/contacts/">Contatos</a></li>
+    {% for link in nav_links %}
+      <li><a href="{{ base_path }}{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
   </ul>
 </nav>
 

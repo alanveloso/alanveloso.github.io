@@ -2,11 +2,20 @@
    CLEAN EDITORIAL SKIN
    Readable two-column layout: serif body, blue links, dashed separators,
    generous whitespace. Original implementation inspired by editorial blogs.
+
+   Body copy size is controlled only by --clean-body-size below.
+   Changing body { font-size } alone does nothing to paragraphs: they use rem
+   (relative to html), not inheritance from body.
    ========================================================================== */
 
+:root {
+  --clean-body-size: 1.125rem;
+  --clean-body-line: 1.55;
+}
+
 body {
-  font-size: 1rem;
-  line-height: 1.55;
+  font-size: var(--clean-body-size);
+  line-height: var(--clean-body-line);
   font-family: $georgia;
   text-rendering: optimizeLegibility;
   margin: 0;
@@ -50,26 +59,30 @@ body {
   &__inner-wrap {
     max-width: var(--clean-max-width);
     margin: 0 auto;
-    padding: 0.5rem 1.25rem !important;
-    border-bottom: 0 !important;
+    padding: 0.5rem 1.25rem 0.85rem !important;
+    border-bottom: 1px dashed var(--global-border-color) !important;
   }
 }
 
 .masthead__brand {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.2rem;
   min-width: 0;
+  text-align: left;
+  width: auto;
 
   .masthead__title {
     color: var(--global-link-color);
     display: inline;
-    font-family: $georgia;
+    font-family: $georgia !important;
     font-size: 1.45rem;
     font-weight: 700;
     line-height: 1.15;
     margin: 0 !important;
     padding: 0 !important;
+    text-align: left;
     text-decoration: underline;
     text-underline-offset: 0.12em;
 
@@ -81,9 +94,10 @@ body {
 
   .masthead__tagline {
     color: var(--global-text-color);
-    font-family: $georgia;
+    font-family: $georgia !important;
     font-size: 0.9rem;
     font-weight: 400;
+    text-align: left;
   }
 }
 
@@ -171,6 +185,86 @@ body {
   text-decoration: underline !important;
 }
 
+.masthead__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.masthead__lang {
+  color: var(--global-link-color);
+  font-family: $georgia !important;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-decoration: underline !important;
+  text-underline-offset: 0.12em;
+
+  &:hover,
+  &:focus {
+    color: var(--global-link-color-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--global-link-color);
+    outline-offset: 3px;
+  }
+}
+
+.masthead__theme {
+  appearance: none;
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  right: auto !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent !important;
+  color: var(--global-text-color);
+  cursor: pointer;
+  line-height: 1;
+  z-index: auto;
+
+  &:hover,
+  &:focus {
+    color: var(--global-link-color);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--global-link-color);
+    outline-offset: 3px;
+  }
+
+  &.hidden {
+    display: inline-flex !important;
+    visibility: visible !important;
+  }
+
+  .theme-icon {
+    display: none;
+    line-height: 0;
+  }
+
+  .theme-icon svg {
+    display: block;
+  }
+}
+
+/* Light mode shows moon (switch to dark); dark mode shows sun (switch to light). */
+html:not([data-theme="dark"]) .masthead__theme .theme-icon--moon,
+html[data-theme="dark"] .masthead__theme .theme-icon--sun {
+  display: inline-flex;
+}
+
 /* --------------------------------------------------------------------------
    Layout — full-width pages and optional project sidebar
    -------------------------------------------------------------------------- */
@@ -196,7 +290,7 @@ body {
 
   #main.main--with-sidebar {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 240px;
+    grid-template-columns: minmax(0, 1fr) 330px;
     column-gap: 2rem;
     align-items: stretch;
   }
@@ -219,9 +313,14 @@ body {
     width: auto;
   }
 
+  .masthead__menu .masthead__controls {
+    margin-left: 0.25rem;
+  }
+
   .masthead__menu .greedy-nav {
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 }
 
@@ -234,7 +333,8 @@ body {
   padding-top: 0 !important;
 }
 
-.projects-sidebar {
+.projects-sidebar,
+.recent-posts-sidebar {
   h2 {
     border: 0;
     font-family: $georgia;
@@ -257,12 +357,17 @@ body {
 
     a {
       color: var(--global-link-color);
+      font-family: $georgia;
+      font-size: 1.25rem;
+      font-weight: 400;
       text-decoration: underline;
       text-underline-offset: 0.12em;
     }
 
-    p {
+    p,
+    time {
       color: var(--global-text-color-light);
+      font-family: $georgia;
       font-size: 0.85rem;
       line-height: 1.45;
       margin: 0;
@@ -275,10 +380,18 @@ body {
 
     a {
       color: var(--global-link-color);
+      font-family: $georgia;
+      font-size: 0.9rem;
       text-decoration: underline;
       text-underline-offset: 0.12em;
     }
   }
+}
+
+.recent-posts-sidebar {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--global-border-color);
 }
 
 /* --------------------------------------------------------------------------
@@ -355,8 +468,8 @@ body {
   }
 
   p, li, dl {
-    font-size: 1rem;
-    line-height: 1.55;
+    font-size: var(--clean-body-size);
+    line-height: var(--clean-body-line);
     overflow-wrap: break-word;
   }
 
@@ -594,8 +707,8 @@ body {
 
   .archive__item-excerpt {
     font-family: $georgia;
-    font-size: 1rem;
-    line-height: 1.55;
+    font-size: var(--clean-body-size);
+    line-height: var(--clean-body-line);
   }
 
   h2 {
@@ -676,7 +789,7 @@ body {
     margin: 0.75rem 0 0.85rem;
     color: var(--global-text-color);
     font-family: $georgia;
-    font-size: 0.95rem;
+    font-size: var(--clean-body-size);
     font-style: italic;
     line-height: 1.4;
   }
@@ -688,8 +801,8 @@ body {
       margin: 0 0 0.75rem;
       color: var(--global-text-color);
       font-family: $georgia;
-      font-size: 1rem;
-      line-height: 1.55;
+      font-size: var(--clean-body-size);
+      line-height: var(--clean-body-line);
 
       &:last-child {
         margin-bottom: 0;
@@ -709,7 +822,7 @@ body {
     a {
       color: var(--global-link-color);
       font-family: $georgia;
-      font-size: 1rem;
+      font-size: var(--clean-body-size);
       text-decoration: underline;
       text-underline-offset: 0.12em;
 
@@ -885,7 +998,17 @@ button:focus-visible,
   }
 
   .masthead__brand {
-    width: 100%;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .masthead__brand .masthead__title,
+  .masthead__brand .masthead__tagline {
+    text-align: left;
   }
 
   .author-profile {
@@ -903,8 +1026,18 @@ button:focus-visible,
 }
 
 @media screen and (max-width: $small) {
+  /* Só vale com largura ≤ 600px. Ajuste aqui — o restante herda a variável. */
+  :root {
+    --clean-body-size: 1.25rem;
+    --clean-body-line: 1.6;
+  }
+
   body {
-    font-size: 1rem;
+    font-family: $georgia;
+  }
+
+  .editorial-preview__title {
+    font-size: 1.45rem;
   }
 
   #main {
@@ -915,6 +1048,27 @@ button:focus-visible,
   .masthead__inner-wrap {
     padding-left: 0.75rem !important;
     padding-right: 0.75rem !important;
+    border-bottom: 1px dashed var(--global-border-color) !important;
+  }
+
+  .masthead__brand {
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .masthead__brand .masthead__title,
+  .masthead__brand .masthead__tagline {
+    font-family: $georgia !important;
+    text-align: left;
+  }
+
+  .masthead__menu-item a {
+    font-family: $georgia !important;
+    text-align: left;
   }
 
   .page__footer footer {

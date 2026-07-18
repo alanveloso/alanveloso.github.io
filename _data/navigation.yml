@@ -6,7 +6,7 @@
 
 main:
   - title: "Sobre"
-    url: /
+    url: /about/
 
   - title: "Blog"
     url: /blog/
@@ -19,3 +19,19 @@ main:
 
   - title: "Contatos"
     url: /contacts/
+
+main_en:
+  - title: "About"
+    url: /en/about/
+
+  - title: "Blog"
+    url: /en/blog/
+
+  - title: "Publications"
+    url: /en/publications/
+
+  - title: "Projects"
+    url: /en/projects/
+
+  - title: "Contacts"
+    url: /en/contacts/

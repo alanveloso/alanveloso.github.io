@@ -1,7 +1,14 @@
 {% include base_path %}
+{% include lang.html %}
 
 {% if page.author and site.data.authors[page.author] %}
   {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
+{% endif %}
+
+{% if ui_lang == "en" and author.bio_en %}
+  {% assign author_bio = author.bio_en %}
+{% else %}
+  {% assign author_bio = author.bio %}
 {% endif %}
 
 <div itemscope itemtype="http://schema.org/Person" class="author-profile">
@@ -10,12 +17,12 @@
   <div class="author__content">
     <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
     {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
-    {% if author.bio %}<p class="author__bio" itemprop="description">{{ author.bio }}</p>{% endif %}
+    {% if author_bio %}<p class="author__bio" itemprop="description">{{ author_bio }}</p>{% endif %}
   </div>
   {% endunless %}
 
   <div class="author__urls-wrapper">
-    <h4 class="author__urls-title">Contatos</h4>
+    <h4 class="author__urls-title">{{ ui.contacts }}</h4>
     <ul class="author__urls">
       {% unless include.compact %}
       {% if author.location %}

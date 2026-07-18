@@ -1,23 +1,28 @@
 {% include base_path %}
+{% include lang.html %}
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav" aria-label="Principal">
-        <button type="button" aria-label="Abrir menu"><span class="navicon"></span></button>
+      <nav id="site-nav" class="greedy-nav" aria-label="{{ ui.nav_label }}">
+        <button type="button" aria-label="{{ ui.nav_label }}"><span class="navicon"></span></button>
         <div class="masthead__brand persist">
-          <a class="masthead__title" href="{{ base_path }}/">{{ site.title }}</a>
-          <span class="masthead__tagline">por {{ site.author.name | default: site.name }}</span>
+          <a class="masthead__title" href="{{ base_path }}{{ home_url }}">{{ site.title }}</a>
+          <span class="masthead__tagline">{{ ui.tagline_prefix }} {{ site.author.name | default: site.name }}</span>
         </div>
         <ul class="visible-links">
-          {% for link in site.data.navigation.main %}
+          {% for link in nav_links %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            {% if link.url == '/' %}
+            {% if page.is_home %}
               {% assign is_selected = false %}
-              {% if page.url == '/' %}{% assign is_selected = true %}{% endif %}
+              {% if site.homepage == 'blog' %}
+                {% if link.url == '/blog/' or link.url == '/en/blog/' %}{% assign is_selected = true %}{% endif %}
+              {% else %}
+                {% if link.url == '/about/' or link.url == '/en/about/' %}{% assign is_selected = true %}{% endif %}
+              {% endif %}
             {% else %}
               {% assign is_selected = false %}
               {% if page.url contains link.url %}{% assign is_selected = true %}{% endif %}
@@ -27,6 +32,37 @@
             </li>
           {% endfor %}
         </ul>
+        <div class="masthead__controls persist">
+          <a
+            class="masthead__lang"
+            href="{{ base_path }}{{ translation_url }}"
+            hreflang="{% if ui_lang == 'en' %}pt-BR{% else %}en{% endif %}"
+            lang="{% if ui_lang == 'en' %}pt-BR{% else %}en{% endif %}"
+            title="{{ ui.lang_switch_label }}"
+            aria-label="{{ ui.lang_switch_label }}"
+          >{{ ui.lang_switch_short }}</a>
+          <button
+            id="theme-toggle"
+            type="button"
+            class="masthead__theme"
+            data-label-light="{{ ui.theme_to_light }}"
+            data-label-dark="{{ ui.theme_to_dark }}"
+            aria-label="{{ ui.theme_to_dark }}"
+            title="{{ ui.theme_to_dark }}"
+          >
+            <span class="theme-icon theme-icon--sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+              </svg>
+            </span>
+            <span class="theme-icon theme-icon--moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>

@@ -37,6 +37,7 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Dark theme for the site */
 html[data-theme="dark"] {
+    color-scheme                        : dark;
     --global-base-color                 : #{$primary-color};
     --global-bg-color                   : #{$background};
     --global-footer-bg-color            : transparent;
@@ -54,6 +55,6 @@ html[data-theme="dark"] {
     --global-text-color-light           : #{$gray};
     --global-thead-color                : #{$background-lighter};
     --clean-highlight-bg                : #{$background-light};
-    --clean-max-width                   : 960px;
+    --clean-max-width                   : 1200px;
     --clean-measure                     : 60ch;
 }

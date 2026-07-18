@@ -3,6 +3,7 @@ title: "Open Career Profile (OCP)"
 collection: projects
 date: 2026-07-17
 author: Alan Veloso
+featured: true
 excerpt: "Perfil de carreira portátil baseado em Open Badges, CLR, LER e Verifiable Credentials, acompanhado de uma aplicação de referência."
 ---
 

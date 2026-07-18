@@ -1,4 +1,5 @@
 {% include base_path %}
+{% include lang.html %}
 
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
@@ -19,15 +20,15 @@
 
   {% if post.date %}
   <p class="editorial-preview__meta">
-    <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%d/%m/%Y" }}</time>
+    <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: ui.date_format }}</time>
   </p>
   {% endif %}
 
   {% if post.author %}
-  <p class="editorial-preview__byline">por {{ post.author }}</p>
+  <p class="editorial-preview__byline">{{ ui.by }} {{ post.author }}</p>
   {% elsif post.path contains '_posts/' or post.path contains '_projects/' %}
     {% if site.author.name %}
-  <p class="editorial-preview__byline">por {{ site.author.name }}</p>
+  <p class="editorial-preview__byline">{{ ui.by }} {{ site.author.name }}</p>
     {% endif %}
   {% endif %}
 
@@ -38,6 +39,6 @@
   {% endif %}
 
   <p class="editorial-preview__more">
-    <a href="{{ preview_url }}"{% unless post.link %} rel="permalink"{% endunless %}>(mais…)</a>
+    <a href="{{ preview_url }}"{% unless post.link %} rel="permalink"{% endunless %}>{{ ui.more }}</a>
   </p>
 </article>
