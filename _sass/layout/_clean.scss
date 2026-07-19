@@ -976,6 +976,49 @@ button:focus-visible,
   outline-offset: 2px;
 }
 
+.back-to-top {
+  position: fixed;
+  right: max(1rem, calc((100vw - var(--clean-max-width)) / 2));
+  bottom: 1rem;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid var(--global-border-color);
+  border-radius: 50%;
+  background: var(--global-bg-color);
+  color: var(--global-link-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  font-family: $georgia;
+  font-size: 1.35rem;
+  line-height: 1;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.5rem);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--global-link-color-hover);
+    text-decoration: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Responsive
    -------------------------------------------------------------------------- */
