@@ -1,4 +1,4 @@
-## I hold a PhD in Computer Science from the Federal University of Pará (UFPA) and currently work at Brazil’s National Education and Research Network (RNP).
+I hold a PhD in Computer Science from the Federal University of Pará (UFPA) and currently work at Brazil’s National Education and Research Network (RNP).
 
 I have worked in research and development for nearly ten years, but I wanted a space where I could write without the conventions of scientific publishing. The [Blog](/en/blog/) will be that space. It will reflect my view that computing has much more to do with using your mind to solve a problem than with the computer itself. To paraphrase my favorite computer scientist:
 

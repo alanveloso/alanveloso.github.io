@@ -1,4 +1,4 @@
-## Sou doutor em Ciência da Computação pela Universidade Federal do Pará (UFPA) e atualmente trabalho na Rede Nacional de Ensino e Pesquisa (RNP).
+Sou doutor em Ciência da Computação pela Universidade Federal do Pará (UFPA) e atualmente trabalho na Rede Nacional de Ensino e Pesquisa (RNP).
 
 Trabalho com pesquisa e desenvolvimento há quase 10 anos, mas queria um espaço para escrever sem o compromisso com os ritos científicos. O [Blog](/blog/) será esse espaço. Ele refletirá muito da minha concepção de que a computação tem muito mais a ver com usar a cabeça para resolver um problema do que com o computador em si. Parafraseando meu cientista da computação preferido:
 
