@@ -1,13 +1,16 @@
-Sou doutor em Ciência da Computação pela Universidade Federal do Pará (UFPA) e trabalho na Rede Nacional de Ensino e Pesquisa (RNP). Minha atuação fica no encontro entre redes de computadores, blockchain e inteligência computacional, com interesse especial em como essas tecnologias podem apoiar sistemas distribuídos mais seguros, adaptáveis e colaborativos.
+## Sou doutor em Ciência da Computação pela Universidade Federal do Pará (UFPA) e atualmente trabalho na Rede Nacional de Ensino e Pesquisa (RNP).
 
-Também atuo no ensino de Computação. Gosto de experimentar formas de tornar conceitos técnicos mais acessíveis — às vezes por meio de software, às vezes criando materiais educacionais e atividades como o projeto [Histórias Operacionais](/projects/2025-historias-operacionais/).
+Trabalho com pesquisa e desenvolvimento há quase 10 anos, mas queria um espaço para escrever sem o compromisso com os ritos científicos. O [Blog](/blog/) será esse espaço. Ele refletirá muito da minha concepção de que a computação tem muito mais a ver com usar a cabeça para resolver um problema do que com o computador em si. Parafraseando meu cientista da computação preferido:
 
-## Pesquisa e trajetória
+> "A ciência da computação não trata de computadores, assim como a astronomia não trata de telescópios."
+> (Edsger W. Dijkstra, 1988)
 
-Meus interesses de pesquisa incluem compartilhamento dinâmico de espectro, redes 5G e além, arquiteturas baseadas em blockchain permissionada, sistemas multiagente e aprendizado federado.
+Lá, também registro ideias e experiências do dia a dia.
 
-Minha trajetória acadêmica começou no curso técnico em Telecomunicações do Instituto Federal do Pará. Depois, concluí o bacharelado, o mestrado e o doutorado em Ciência da Computação na UFPA.
+Tenho interesses de pesquisa amplos, mas meus estudos atuais estão concentrados em Comunicação Quântica, *Quantum Machine Learning* (QML) e acesso dinâmico ao espectro de frequências. Em [Publicações](/publications/), reúno minha produção acadêmica.
 
-## Por aqui
+Em [Projetos](/projects/), compartilho minhas iniciativas de software (ou não), sejam elas já concluídas ou em andamento. Nesse espaço, exploro a experimentação de novas ideias, como no [Open Career Profile (OCP)](/projects/2026-open-career-profile/). Além disso, como atuo no ensino de Computação, a página também reúne formas de tornar conceitos técnicos mais acessíveis, a exemplo do [Histórias Operacionais](/projects/2025-historias-operacionais/).
 
-No [Blog](/blog/), registro ideias e experiências. Em [Publicações](/publications/), reúno minha produção acadêmica; em [Projetos](/projects/), materiais, experimentos e trabalhos em andamento. Para conversar ou encontrar meus perfis, consulte a página de [Contatos](/contacts/).
+Para conversar ou encontrar meus perfis, consulte a página de [Contatos](/contacts/).
+
+
