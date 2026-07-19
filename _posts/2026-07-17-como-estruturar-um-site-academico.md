@@ -1,6 +1,7 @@
 ---
 title: "Como estruturar um site acadêmico sem perder a legibilidade"
 date: 2026-07-17
+published: false
 ---
 
 Uma página pessoal acadêmica não precisa parecer um currículo empilhado. Com tipografia clara, poucos elementos e links bem posicionados, o conteúdo ganha espaço para ser lido com calma.
