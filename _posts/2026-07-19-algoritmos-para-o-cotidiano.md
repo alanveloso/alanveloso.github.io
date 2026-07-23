@@ -13,7 +13,7 @@ Ao observarmos nossos desafios diários sob a perspectiva de modelos computacion
 
 # **Como fazer uma escolha?**
 
-Você já se viu no dilema entre **continuar procurando por algo melhor ou aceitar o que já encontrou?** Seja analisando um apartamento ou uma vaga de estacionamento, a matemática oferece a "Regra dos 37%" como um guia referencial. Esse modelo de parada ótima, famoso na matemática e conhecido como o [Problema da Secretária](https://en.wikipedia.org/wiki/Secretary\_problem), demonstra estatisticamente que a melhor estratégia é dedicar **os primeiros 37% do seu tempo de busca apenas à observação e ao estabelecimento de um critério de qualidade**, sem a pressão de tomar uma decisão imediata.
+Você já se viu no dilema entre **continuar procurando por algo melhor ou aceitar o que já encontrou?** Seja analisando um apartamento ou uma vaga de estacionamento, a matemática oferece a "Regra dos 37%" como um guia referencial. Esse modelo de parada ótima, famoso na matemática e conhecido como o [Problema da Secretária](https://en.wikipedia.org/wiki/Secretary_problem), demonstra estatisticamente que a melhor estratégia é dedicar **os primeiros 37% do seu tempo de busca apenas à observação e ao estabelecimento de um critério de qualidade**, sem a pressão de tomar uma decisão imediata.
 
 Após essa fase de exploração, a sugestão é considerar a próxima opção que supere o que foi visto anteriormente. Embora não garanta o resultado perfeito, essa lógica ajuda a **equilibrar as chances entre o risco de procurar indefinidamente e o de se contentar cedo demais** com uma escolha pouco satisfatória, oferecendo um suporte racional para lidar com a incerteza.
 
